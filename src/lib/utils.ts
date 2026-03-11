@@ -1,11 +1,5 @@
-import { type ClassValue, clsx } from 'clsx';
-
-export function cn(...inputs: ClassValue[]) {
-  // Simple className merger without clsx dep
-  return inputs
-    .flat()
-    .filter(Boolean)
-    .join(' ');
+export function cn(...inputs: (string | undefined | null | false | 0)[]) {
+  return inputs.filter(Boolean).join(' ');
 }
 
 export function formatDate(dateString: string): string {
